@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>DUNE VR in the browser</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+      .interactive {
+	  height: 500px;
+	  width: 100%;
+      }
+      .note {
+	  font-size: 20px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section class="title">
+
+	  <h3>DUNE VR in the Browser</h3>
+
+	  <p>
+	    <a href="">
+	      thomas.mccauley@cern.ch
+	    </a>
+	  </p>
+	  <p>
+	    <a href="">
+	      t.sogo-bezerra@sussex.ac.uk
+	    </a>
+	  <p>
+	    <div class="note">
+	      <a href="https://tpmccauley.github.io/education-outreach-applications-browser/" target="_blank">
+		https://tpmccauley.github.io/dune-vr-browser
+	      </a>
+	    </div>
+	  </p>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Software and usage</h2>
+	    <p>
+	      <ul>
+		<li>
+		  The web browser as a target platform can be straightforward to develop for and can allow for easy (and frequent) deployment
+		  of applications.
+		</li>
+		<li>
+		  <a href="https://aframe.io/" target="_frame">A-Frame</a>, "a web framework for building 3D/AR/VR experiences" is used for this
+		application
+		</li>
+	      </ul>
+	  </section>
+	  <section>
+	    <ul>
+	      <li>
+		Idea: With A-Frame use the panoramic images available on CERN Document Server (like <a href="https://cds.cern.ch/record/2275250" target="_blank">these</a>)
+		to make an application to explore DUNE (protoDUNE actually). Something similar has been done for <a href="https://cern.ch/cms-aframe" target="_frame">CMS</a>.
+	      </li>
+	      <li>
+		Usage: As a stand-alone application in the desktop or (even better)
+		in a tablet or mobile (the view changes as you move the device). You can emded it in a webpage as well.
+		There is even a possibility for stereo VR viewing with the right equipment
+		(like a <a href="https://arvr.google.com/cardboard/" target="_frame">
+		  Google Cardboard viewer</a>). This is what's described here.
+	      </li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <img src="img/cardboard1.jpg" width="40%">
+	    <img src="img/cardboard2.jpg" width="40%">
+	  </section>
+	  
+	</section>
+
+	<section>
+	  <section>
+	    <h2>DUNE VR</h2>
+	    <ul>
+	      <li>
+		GitHub repo:
+		<a href="https://github.com/HEPPanoramic/dune-vr" target="_frame">
+		  https://github.com/HEPPanoramic/dune-vr
+		</a>
+	      </li>
+	      <li>
+		Current test deployment:
+		<a href="https://heppanoramic.github.io/dune-vr/" target="_frame">
+		  https://heppanoramic.github.io/dune-vr/
+		</a>
+	      </li>
+	    </ul>
+	  </section>
+	  
+	  <section>
+	    <p>Turn something like this...</p>
+	    <img src="img/panorama.png">
+	  </section>
+	  
+	  <section>
+	    <p>...into something like this</p>
+	    <a href="https://heppanoramic.github.io/dune-vr/" data-preview-link>
+	      <img src="./img/dune1.png"></img>
+	    </a> 
+	  </section>
+
+	  <section>
+	    <img src="img/dune2.png"></img>
+	  </section>
+	  
+	  <section>
+	    <img src="img/dune3.png"></img>
+	  </section>	  
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Status and possible improvements</h2>
+	    <p>
+	      The application as-is is already a "minimum viable product" but there could be improvements:
+	    </p>
+	    <ul>
+	      <li>
+		There is a lack of context and explanation for each image and location: some (minimal) explanation is needed
+	      </li>
+	      <li>
+		The navigation is "flat": perhaps make it a "journey" going from one location to the other?
+	      </li>
+	      <li>
+		Idea: add a panoramic "room" populated with DUNE event displays and plots
+	    </ul>
+	  </section>
+	  <section>
+	    <h2>To-do</h2>
+	    <ul>
+	      <li>Determine how to best distribute the application: inexpensive phones already loaded into (minimally-branded?) cardboard viewers?
+	      </li>
+	      <li>
+		Determine minimum hardware and browser requirements
+	      </li>
+	      <li>
+		Make use of 3D files of detector and events?
+	      </li>
+	    </ul>
+	</section>
+	    
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+	  hash: true,
+	  slideNumber: true,
+	  // Learn about plugins: https://revealjs.com/plugins/
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
